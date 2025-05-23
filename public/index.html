@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pinterest Infographic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Harnessing Infographics for <br>Effective Pinterest Marketing</h1>
+    
+    <div class="infographic">
+      <div class="block left">
+        <div class="number">1</div>
+        <div class="content">
+          <h2>Simplifying Complex Information</h2>
+          <p>Infographics simplify complex data and concepts into digestible visual formats. This is particularly useful for e-commerce brands or service providers looking to explain products or services quickly.</p>
+        </div>
+      </div>
+
+      <div class="block right">
+        <div class="number">2</div>
+        <div class="content">
+          <h2>Boosting Brand Awareness</h2>
+          <p>Consistent use of infographics helps in building brand identity. By using specific colors, fonts, and styles, brands can create a distinct visual language that resonates with users and enhances recall.</p>
+        </div>
+      </div>
+
+      <div class="block left">
+        <div class="number">3</div>
+        <div class="content">
+          <h2>Encouraging Shares and Saves</h2>
+          <p>Infographics are highly shareable content; they encourage users to save, pin, or share them due to their informative nature. This can lead to organic reach and visibility on Pinterest.</p>
+        </div>
+      </div>
+
+      <div class="block right">
+        <div class="number">4</div>
+        <div class="content">
+          <h2>Driving Traffic to Websites</h2>
+          <p>Infographics can include call-to-actions (CTAs) linking back to your website or landing page, facilitating the conversion of Pinterest users into website visitors, thus driving traffic effectively.</p>
+        </div>
+      </div>
+
+      <div class="block left">
+        <div class="number">5</div>
+        <div class="content">
+          <h2>Leveraging SEO Benefits</h2>
+          <p>When properly tagged with keywords and descriptions, infographics can enhance SEO on Pinterest. This can improve discoverability, making it easier for users interested in specific topics to find your pins.</p>
+        </div>
+      </div>
+
+      <div class="block right">
+        <div class="number">6</div>
+        <div class="content">
+          <h2>Creating Educational Content</h2>
+          <p>Infographics can serve as educational tools or tutorials, providing value to your audience. This type of informative content can establish authority in your niche and attract a loyal following.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="screenshot-btn" onclick="takeScreenshot()">Take Screenshot</button>
+  </div>
+
+  <script>
+    function takeScreenshot() {
+      fetch('/screenshot')
+        .then(res => res.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'infographic-screenshot.png';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          window.URL.revokeObjectURL(url);
+        });
+    }
+  </script>
+</body>
+</html>
